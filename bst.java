@@ -24,7 +24,27 @@ public class bst{
                 System.out.println("Duplicate data not allowed");
             }
         }
-    }public void display(Node rootNode){
+    }public void inorder(Node rootNode){
+        if(rootNode!=null){
+            inorder(rootNode.left);
+            System.out.print(rootNode.data + " ");
+            inorder(rootNode.right);
+        }
+    }
+    public void postorder(Node rootNode){
+        if(rootNode!=null){
+            postorder(rootNode.left);
+            postorder(rootNode.right);
+            System.out.print(rootNode.data + " ");
+        }
+    }public void preorder(Node rootNode){
+        if(rootNode!=null){
+            System.out.print(rootNode.data + " ");
+            preorder(rootNode.left);
+            preorder(rootNode.right);
+        }
+    }
+    public void display(Node rootNode){
         if(rootNode==null){
             System.out.println("Tree is empty");
         }else{
